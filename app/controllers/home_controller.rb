@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     if current_user
       redirect_to main_index_path
     else
-      render "index"
+      render "home/index"
     end
   end
 end

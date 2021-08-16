@@ -23,4 +23,17 @@ Rails.application.routes.draw do
   get "/signin" => "sessions#new", as: :new_sessions
   post "/signin" => "sessions#create", as: :sessions
   delete "/signout" => "sessions#destroy", as: :destroy_session
+
+  #Rest api resources
+  namespace :api do
+    namespace :v1 do
+      resources :users
+      resources :menu_items
+      resources :menu_categories
+      resources :cart_items
+      resources :orders
+      resources :order_items
+      get "/display_users" => "users#display", as: :display_user
+    end
+  end
 end
